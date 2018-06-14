@@ -51,6 +51,7 @@ py==1.5.2
 py-descriptive-statistics==0.2
 Pygments==2.0.2
 pytest==3.5.1
+PyYAML==3.12
 git+git://github.com/okken/pytest-expect.git
 pytest-forked==0.2
 pytest-pycharm==0.5.0
