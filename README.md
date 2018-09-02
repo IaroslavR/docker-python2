@@ -12,9 +12,12 @@ Our CI python. Modification of [docker-python27-pandas](https://github.com/sereb
 
 #### How to set additional tag to `latest` image:
 
+`<new tag>` is tag of our current application version
+
 ```bash
 docker pull iarruss/docker-python2:latest
 docker images
 docker tag <hash-of-latest> iarruss/docker-python2:<new-tag>
+docker login
 docker push iarruss/docker-python2:<new-tag>
 ``` 
