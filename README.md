@@ -1,12 +1,19 @@
 # docker-python2
 
-Up to date test environment. Modification of [docker-python27-pandas](https://github.com/serebrov/docker-python27-pandas)
+Our CI python. Modification of [docker-python27-pandas](https://github.com/serebrov/docker-python27-pandas)
 
-Automated image deployment can triggered by `tag`
+#### How to build
 
-Manual tag settings example:
+1. Copy requirements from application
+2. `push` changes
+3. go to [dockerhub](https://hub.docker.com/r/iarruss/docker-python2/~/settings/automated-builds/) and trigger automated build
+4. Optional: set tag to latest created image
+
+####How to set additional tag to `latest` image:
+
 ```bash
+docker pull iarruss/docker-python2:latest
 docker images
-docker tag 2d4c92906f73 iarruss/docker-python2:0.1.0
-docker push iarruss/docker-python2:0.1.0
+docker tag <hash-of-latest> iarruss/docker-python2:<new-tag>
+docker push iarruss/docker-python2:<new-tag>
 ``` 
