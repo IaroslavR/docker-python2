@@ -21,3 +21,12 @@ docker tag <hash-of-latest> iarruss/docker-python2:<new-tag>
 docker login
 docker push iarruss/docker-python2:<new-tag>
 ``` 
+
+#### How to delete unused docker artifacts
+
+```bash
+sudo docker system prune
+```
+##### links
+* [system prune](https://docs.docker.com/engine/reference/commandline/system_prune/#description)
+* [How To Remove Docker Images, Containers, and Volumes](https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes)
