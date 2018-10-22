@@ -11,7 +11,7 @@ Cerberus==1.2
 certifi==2018.10.15
 chardet==3.0.4
 coverage==4.5.1
-decimal-monkeypatch==0.2.5
+decimal-monkeypatch==0.3
 decorator==4.2.1
 dictdiffer==0.7.1
 docopt==0.6.2
