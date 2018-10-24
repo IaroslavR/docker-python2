@@ -11,7 +11,7 @@ Cerberus==1.2
 certifi==2018.10.15
 chardet==3.0.4
 coverage==4.5.1
-decimal-monkeypatch==0.3
+decimal-monkeypatch==0.4.2
 decorator==4.2.1
 dictdiffer==0.7.1
 docopt==0.6.2
@@ -55,6 +55,7 @@ py-descriptive-statistics==0.2
 Pygments==2.0.2
 pytest==3.9.1
 PyYAML==3.13
+pytest-env==0.6.2
 git+git://github.com/okken/pytest-expect.git
 pytest-forked==0.2
 pytest-pycharm==0.5.0
