@@ -30,3 +30,8 @@ sudo docker system prune
 ##### links
 * [system prune](https://docs.docker.com/engine/reference/commandline/system_prune/#description)
 * [How To Remove Docker Images, Containers, and Volumes](https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes)
+* https://blog.realkinetic.com/building-minimal-docker-containers-for-python-applications-37d0272c52f3
+* https://www.codacy.com/blog/five-ways-to-slim-your-docker-images/
+* https://blog.onebar.io/reducing-docker-image-size-using-multi-stage-build-4ec8ee111aae
+* https://semaphoreci.com/blog/2016/12/13/lightweight-docker-images-in-5-steps.html
+

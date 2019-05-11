@@ -1,4 +1,4 @@
 .DEFAULT: build
 
 build: Dockerfile
-	docker build -t iarruss/python2:latest .
+	docker build -t iarruss/builder:latest .
