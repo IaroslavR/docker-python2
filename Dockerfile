@@ -1,4 +1,5 @@
-FROM python:2.7-slim
+ARG BASE_IMAGE
+FROM $BASE_IMAGE
 LABEL maintainer=<iarruss@ya.ru>
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \

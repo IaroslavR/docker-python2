@@ -1,6 +1,6 @@
 include .env
 
-.PHONY: build all push
+.PHONY: build all push clean
 .DEFAULT_GOAL := all
 
 build:
@@ -11,5 +11,9 @@ build:
 push:
 	docker push ${OWNER}/${NAME}:${TAG}
 	docker push ${OWNER}/${NAME}:latest
+
+clean:
+	docker system prune -f
+
 
 all: build push
