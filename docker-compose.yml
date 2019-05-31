@@ -1,23 +1,10 @@
 version: '3'
 services:
-  rds:
-    image: postgres:9.4
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: root
-  dynamo:
-    image: iarruss/dynamo-local-admin:latest
-    ports:
-      - "8000:8000"
   python:
-    image: iarruss/python2:latest
-    depends_on:
-      - rds
-      - dynamo
-    environment:
-      POSTGRES_HOST: rds
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: root
-      DYNAMODB_HOST: dynamo
+    image: ${OWNER}/${NAME}:${TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BASE_IMAGE: ${BASE_IMAGE}
+    network_mode: host
