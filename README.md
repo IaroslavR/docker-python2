@@ -16,3 +16,7 @@ As result on dockerhub will be pushed image with **2** tags: TAG from `.env` and
 * https://blog.onebar.io/reducing-docker-image-size-using-multi-stage-build-4ec8ee111aae
 * https://semaphoreci.com/blog/2016/12/13/lightweight-docker-images-in-5-steps.html
 
+
+* https://pythonspeed.com/articles/faster-multi-stage-builds/
+* https://pythonspeed.com/articles/multi-stage-docker-python/
+* https://vsupalov.com/cache-docker-build-dependencies-without-volume-mounting/
