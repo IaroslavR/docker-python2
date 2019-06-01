@@ -1,7 +1,7 @@
 include .env
 
 .PHONY: build all push clean
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := build
 
 build:
 	docker pull ${BASE_IMAGE}

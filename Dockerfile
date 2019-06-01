@@ -1,6 +1,5 @@
 ARG BASE_IMAGE
-FROM $BASE_IMAGE
-LABEL maintainer=<iarruss@ya.ru>
+FROM $BASE_IMAGE AS compile-image
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
        gfortran \
@@ -12,11 +11,25 @@ RUN apt-get update \
        default-libmysqlclient-dev \
        python-dev \
        libffi-dev libssl-dev \
-       # for build
+       # for build from slim image
        git g++ \
        libtiff5-dev libjpeg62-turbo zlib1g-dev \
        libfreetype6-dev liblcms2-dev libwebp-dev \
        libharfbuzz-dev libfribidi-dev tcl8.6-dev \
        tk8.6-dev python-tk build-essential
 COPY requirements.txt /tmp/requirements.txt
-RUN pip install -r /tmp/requirements.txt
+RUN pip install --user -r /tmp/requirements.txt
+
+ARG BASE_IMAGE
+FROM $BASE_IMAGE AS build-image
+LABEL maintainer=<iarruss@ya.ru>
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        libgeos-c1v5 \
+#        git \
+#        python-tk \
+    && apt-get purge -y \
+    && apt-get autoremove -y \
+    && apt-get clean
+COPY --from=compile-image /root/.local /root/.local
+ENV PATH=/root/.local/bin:$PATH
