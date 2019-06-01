@@ -20,3 +20,5 @@ As result on dockerhub will be pushed image with **2** tags: TAG from `.env` and
 * https://pythonspeed.com/articles/faster-multi-stage-builds/
 * https://pythonspeed.com/articles/multi-stage-docker-python/
 * https://vsupalov.com/cache-docker-build-dependencies-without-volume-mounting/
+
+* https://vsupalov.com/docker-latest-tag/
