@@ -26,6 +26,7 @@ LABEL maintainer=<iarruss@ya.ru>
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         libgeos-c1v5 \
+        default-libmysqlclient-dev \
 #        git \
 #        python-tk \
     && apt-get purge -y \
