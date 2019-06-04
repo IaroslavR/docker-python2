@@ -7,4 +7,3 @@ services:
       dockerfile: Dockerfile
       args:
         BASE_IMAGE: ${BASE_IMAGE}
-    network_mode: host

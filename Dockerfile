@@ -17,8 +17,13 @@ RUN apt-get update \
        libfreetype6-dev liblcms2-dev libwebp-dev \
        libharfbuzz-dev libfribidi-dev tcl8.6-dev \
        tk8.6-dev python-tk build-essential
+ENV PATH=/root/.local/bin:$PATH
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install --user -r /tmp/requirements.txt
+COPY requirements-new.txt /tmp/requirements-new.txt
+RUN pip install --user -r /tmp/requirements-new.txt
+ENV PYTHONPATH=/opt/project:$PYTHONPATH
+
 
 ARG BASE_IMAGE
 FROM $BASE_IMAGE AS build-image
@@ -27,10 +32,9 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         libgeos-c1v5 \
         default-libmysqlclient-dev \
-#        git \
-#        python-tk \
-    && apt-get purge -y \
-    && apt-get autoremove -y \
-    && apt-get clean
+    && apt-get clean autoclean \
+    && apt-get autoremove --yes \
+    && rm -rf /var/lib/{apt,dpkg,cache,log}/
 COPY --from=compile-image /root/.local /root/.local
 ENV PATH=/root/.local/bin:$PATH
+ENV PYTHONPATH=/opt/project:$PYTHONPATH
