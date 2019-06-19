@@ -1,10 +1,12 @@
 include .env
 
-.PHONY: build all push clean
+.PHONY: build all push pull clean
 .DEFAULT_GOAL := build
 
-build:
+pull:
 	docker pull ${BASE_IMAGE}
+
+build:
 	docker-compose build
 	docker tag ${OWNER}/${NAME}:${TAG} ${OWNER}/${NAME}:latest
 
@@ -16,4 +18,4 @@ clean:
 	docker system prune -f
 
 
-all: build push
+all: pull build push

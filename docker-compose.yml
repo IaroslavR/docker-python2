@@ -7,3 +7,8 @@ services:
       dockerfile: Dockerfile
       args:
         BASE_IMAGE: ${BASE_IMAGE}
+    # https://stackoverflow.com/a/51530034/4249707
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_PTRACE

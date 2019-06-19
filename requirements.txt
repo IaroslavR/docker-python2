@@ -71,6 +71,7 @@ newrelic==4.20.0.120
 numpy==1.16.4
 pandas==0.16.1
 pathlib2==2.3.0
+pebble==4.3.10
 pexpect==4.4.0
 pickleshare==0.7.4
 Pillow==5.2.0
