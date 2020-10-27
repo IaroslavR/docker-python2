@@ -25,7 +25,7 @@ configparser==3.7.4
 contextlib2==0.5.5
 cookies==2.2.1
 coverage==4.5.1
-cryptography==2.7
+cryptography==3.2
 decimal-monkeypatch==0.4.3
 decorator==4.2.1
 dictdiffer==0.7.1
