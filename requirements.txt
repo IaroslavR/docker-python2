@@ -102,7 +102,7 @@ pyzmq==17.0.0
 redis==3.2.1
 requests==2.22.0
 responses==0.10.6
-rsa==4.0
+rsa==4.7
 s3transfer==0.2.0
 scandir==1.7
 scikit-learn==0.16.1
